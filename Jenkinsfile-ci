@@ -15,7 +15,7 @@ pipeline {
   stages {
     stage('📥 Clone Code from GitHub') {
       steps {
-        git branch: 'main',
+        git branch: 'master',
             credentialsId: 'github-token',
             url: 'https://github.com/kirankumaritth/amazon-prime-video-devsecops.git'
       }
@@ -55,12 +55,12 @@ pipeline {
   }
 
   post {
-    success {
-      echo '✅ CI Pipeline completed successfully.'
-      build job: 'primevideo-cd'
-    }
-    failure {
-      echo '❌ CI Pipeline failed.'
-    }
+      success {
+          echo '✅ CI stages completed successfully.'
+      }
+      failure {
+          echo '❌ CI Pipeline marked as failed. This might be due to the optional trigger for the CD pipeline (primevideo-cd) not running or failing.'
+          echo '🔍 Note: All CI steps may have passed. Please check logs for exact status.'
+      }
   }
 }
