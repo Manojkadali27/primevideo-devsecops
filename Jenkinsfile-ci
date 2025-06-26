@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     SONARQUBE = 'SonarQube'
-    DOCKER_IMAGE = 'kiranitth/primevideo-app:latest'
+    DOCKER_IMAGE = 'manojkadali/primevideo_docker:latest'
     SCANNER_HOME = tool 'sonar-scanner'
   }
 
