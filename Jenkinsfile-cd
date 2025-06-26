@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     DOCKER_IMAGE = 'manojkadali/primevideo_docker:latest'
-    CONTAINER_NAME = 'primevideo_docker'
+    CONTAINER_NAME = 'primevideo-app'
   }
 
   stages {
